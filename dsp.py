@@ -2,54 +2,49 @@ import sys
 
 from tkinter import*
 root=Tk()
-root.title("CONVOLUTION")
+root.title("CONVOLUTION")  # adding title to GUI window
 #root.geometry("600x600")
-frame=Frame(root)
+
+#Creating display for input x[n]
+frame=Frame(root)       
 frame.pack()
-a=Label(frame,text="x[n]=",font=30)
+a=Label(frame,text="x[n]=",font=30)   
 a.pack(side=LEFT)
-#frame1=Frame(root)
-#frame1.pack()
 num=StringVar()
 operator=""
 txtDisplay=Entry(frame,textvariable=num,bd=20,insertwidth=2,font=30)
 txtDisplay.pack(side=RIGHT)
 
-frame2=Frame(root)
+ #Creating display for input h[n]
+frame2=Frame(root) 
 frame2.pack()
-
 b=Label(frame2,text="h[n]=",font=30)
 b.pack(side=LEFT)
-
-#frame3=Frame(root)
-#frame3.pack()
-
 num1=StringVar()
 txtDisplay1=Entry(frame2,textvariable=num1,bd=20,insertwidth=2,font=30)
 txtDisplay1.pack(side=RIGHT)
 
-frame3=Frame(root)
+#Creating display for output linear convolution
+frame3=Frame(root)  
 frame3.pack()
-
 c=Label(frame3,text="Lconv",font=30)
 c.pack(side=LEFT)
 num2=StringVar()
 txtDisplay2=Entry(frame3,textvariable=num2,bd=20,insertwidth=2,font=30)
 txtDisplay2.pack(side=LEFT)
 
+#Creating display for output circular Convolution
 frame4=Frame(root)
 frame4.pack()
-
 d=Label(frame4,text="Cconv",font=30)
 d.pack(side=LEFT)
-
 num3=StringVar()
 txtDisplay3=Entry(frame4,textvariable=num3,bd=20,insertwidth=2,font=30)
 txtDisplay3.pack(side=LEFT)
 
 
 
-
+#Code For Linear Convolution
 y=0
 def lconv():
     global y
@@ -114,7 +109,9 @@ def lconv():
                 y[i]=y[i]+int(x[j])*int(h[i-j])
     s=str(y)
     num2.set(s)
-
+    
+    
+#Code For Circular Convolution
 def circonv():
     a=num.get()
     b=num1.get()
@@ -171,6 +168,7 @@ def circonv():
 tframe=Frame(root)
 tframe.pack(side=TOP)
 
+#Creating Buttons
 button1=Button(tframe,padx=16,pady=16,text="Linear Convolution",fg="black",bd=10,command=lconv)
 button1.pack(side=LEFT)
 
