@@ -169,9 +169,9 @@ tframe=Frame(root)
 tframe.pack(side=TOP)
 
 #Creating Buttons
-button1=Button(tframe,padx=16,pady=16,text="Linear Convolution",fg="black",bd=10,command=lconv)
+button1=Button(tframe,padx=16,activebackground='red',pady=16,text="Linear Convolution",fg="black",bd=10,command=lconv)
 button1.pack(side=LEFT)
 
-button2=Button(tframe,padx=16,pady=16,text="Circular Convolution",fg="black",bd=10,command=circonv)
+button2=Button(tframe,padx=16,activebackground='red',pady=16,text="Circular Convolution",fg="black",bd=10,command=circonv)
 button2.pack(side=LEFT)
 root.mainloop()
